@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Arafat Hossain",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "arafat.hossain@gmail.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["school"],
+    "bio": "We studied together in high school and used to play football every afternoon.",
+    "goal": 14,
+    "next_due_date": "2025-07-10"
+  },
+  {
+    "id": 2,
+    "name": "Nusrat Jahan",
+    "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "nusrat.jahan@gmail.com",
+    "days_since_contact": 10,
+    "status": "almost due",
+    "tags": ["college", "best friend"],
+    "bio": "Met in college. We often hang out and share everything.",
+    "goal": 14,
+    "next_due_date": "2025-07-18"
+  },
+  {
+    "id": 3,
+    "name": "Rahim Uddin",
+    "picture": "https://randomuser.me/api/portraits/men/55.jpg",
+    "email": "rahim.uddin@yahoo.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["office"],
+    "bio": "Works with me in the same office. We usually have lunch together.",
+    "goal": 14,
+    "next_due_date": "2025-07-25"
+  },
+  {
+    "id": 4,
+    "name": "Tanvir Ahmed",
+    "picture": "https://randomuser.me/api/portraits/men/21.jpg",
+    "email": "tanvir.ahmed@gmail.com",
+    "days_since_contact": 20,
+    "status": "overdue",
+    "tags": ["university", "roommate"],
+    "bio": "My university roommate. We stayed together for 4 years.",
+    "goal": 14,
+    "next_due_date": "2025-07-08"
+  },
+  {
+    "id": 5,
+    "name": "Sadia Islam",
+    "picture": "https://randomuser.me/api/portraits/women/12.jpg",
+    "email": "sadia.islam@gmail.com",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["family", "cousin"],
+    "bio": "My cousin. We meet during family gatherings and talk a lot.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 6,
+    "name": "Fahim Hasan",
+    "picture": "https://randomuser.me/api/portraits/men/60.jpg",
+    "email": "fahim.hasan@gmail.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["gym"],
+    "bio": "Gym partner. We motivate each other to stay fit.",
+    "goal": 14,
+    "next_due_date": "2025-07-27"
+  },
+  {
+    "id": 7,
+    "name": "Mim Akter",
+    "picture": "https://randomuser.me/api/portraits/women/30.jpg",
+    "email": "mim.akter@gmail.com",
+    "days_since_contact": 15,
+    "status": "overdue",
+    "tags": ["school", "childhood"],
+    "bio": "Childhood friend. We grew up in the same neighborhood.",
+    "goal": 14,
+    "next_due_date": "2025-07-12"
+  },
+  {
+    "id": 8,
+    "name": "Shakib Chowdhury",
+    "picture": "https://randomuser.me/api/portraits/men/40.jpg",
+    "email": "shakib.chy@gmail.com",
+    "days_since_contact": 11,
+    "status": "almost due",
+    "tags": ["travel", "adventure"],
+    "bio": "Travel buddy. We love going on adventures and exploring new places.",
+    "goal": 14,
+    "next_due_date": "2025-07-19"
+  },
+  {
+    "id": 9,
+    "name": "Farzana Rahman",
+    "picture": "https://randomuser.me/api/portraits/women/25.jpg",
+    "email": "farzana.rahman@gmail.com",
+    "days_since_contact": 6,
+    "status": "on-track",
+    "tags": ["office"],
+    "bio": "Team member at work. Very helpful and supportive.",
+    "goal": 14,
+    "next_due_date": "2025-07-26"
+  },
+  {
+    "id": 10,
+    "name": "Imran Kabir",
+    "picture": "https://randomuser.me/api/portraits/men/10.jpg",
+    "email": "imran.kabir@gmail.com",
+    "days_since_contact": 17,
+    "status": "overdue",
+    "tags": ["business", "partner"],
+    "bio": "Business partner. We started a small project together last year.",
+    "goal": 14,
+    "next_due_date": "2025-07-11"
+  }
+]

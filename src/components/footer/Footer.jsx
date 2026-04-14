@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="bg-[#244D3F]">
       <footer className="w-full max-w-277.5 mx-auto text-center  text-primary-content pt-20">
         <div className="   px-5 xl:px-0">
-          <h2 className=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className=" text-3xl sm:text-4xl md:text-5xl lg:text-6xl  font-bold mb-4">
             KeenKeeper
           </h2>
           <p className="text-white/80 mb-6">

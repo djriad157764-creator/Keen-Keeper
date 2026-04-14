@@ -13,7 +13,8 @@ const router = createBrowserRouter([
     Component: RootLayout,
     children: [{ index: true, Component: HomePage },
       { path: "timeline",Component:TimeLine },
-      { path: "stats",Component:Stats }
+      { path: "stats", Component: Stats },
+      {path:'friendDetails/:id',}
     ],
   },
 ]);
