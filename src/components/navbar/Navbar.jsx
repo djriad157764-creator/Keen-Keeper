@@ -66,8 +66,8 @@ const Navbar = () => {
             {navItem.map((item) => (
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive && "font-semibold px-4 bg-[#244D3F] text-white" }
-                        rounded-sm py-2.5 px-4
+                  `${isActive && "font-semibold px-4 bg-[#244D3F] text-white"}
+                      text-[#64748B]  rounded-sm py-2.5 px-4
                  `
                 }
                 key={item.id}
