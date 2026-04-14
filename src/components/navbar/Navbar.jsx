@@ -1,16 +1,21 @@
+import { IoIosTimer } from "react-icons/io";
+import { RxHome } from "react-icons/rx";
+import { TfiStatsUp } from "react-icons/tfi";
 import { NavLink } from "react-router";
 
 const navItem = [
-  { id: 1, name: "Home", path: "/" },
-  { id: 2, name: "Timeline", path: "/timeline" },
-  { id: 3, name: "Stats", path: "/stats" },
+  { id: 1, name: "Home", path: "/", navIcon: <RxHome /> },
+  { id: 2, name: "Timeline", path: "/timeline", navIcon: <IoIosTimer /> },
+  { id: 3, name: "Stats", path: "/stats", navIcon: <TfiStatsUp /> },
 ];
 
 const Navbar = () => {
   return (
     <div className="bg-white shadow-sm">
-          <div className="navbar relative
-       w-full max-w-360 mx-auto ">
+      <div
+        className="navbar relative
+       w-full max-w-360 mx-auto "
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,8 +42,7 @@ const Navbar = () => {
               {navItem.map((item) => (
                 <NavLink
                   className={({ isActive }) =>
-                    `${isActive ? "font-semibold bg-[#244D3F] text-white" : ""}
-                         rounded-sm py-2.5 px-4
+                    `${isActive && "font-semibold  bg-[#244D3F] text-white"} px-4 rounded-sm py-2.5 
                  `
                   }
                   key={item.id}
@@ -58,18 +62,20 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end">
-          <ul className="hidden lg:block">
+          <ul className=" hidden lg:flex items-center">
             {navItem.map((item) => (
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? "font-semibold bg-[#244D3F] text-white" : ""}
-                         rounded-sm py-2.5 px-4
+                  `${isActive && "font-semibold px-4 bg-[#244D3F] text-white" }
+                        rounded-sm py-2.5 px-4
                  `
                 }
                 key={item.id}
                 to={item.path}
               >
-                {item.name}
+                <p className="flex items-center gap-1">
+                  <span className="text-xl">{item.navIcon}</span> {item.name}
+                </p>
               </NavLink>
             ))}
           </ul>
@@ -80,5 +86,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
