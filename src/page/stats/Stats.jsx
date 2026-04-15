@@ -130,26 +130,50 @@ const Stats = () => {
   const data = all(textData, callData, videoData);
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <PieChart>
-        <Pie
-          data={data}
-          dataKey="value"
-          nameKey="name"
-          innerRadius="75%"
-          outerRadius="100%"
-          cornerRadius={50}
-          paddingAngle={5}
-          isAnimationActive
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Tooltip />
-        <Legend verticalAlign="bottom" height={36} />
-      </PieChart>
-    </ResponsiveContainer>
+    <div className="mx-5 xl:px-0">
+      <div className="w-full max-w-277.5 mx-auto">
+        <h1 className="mt-20 text-[#1F2937] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl ">
+          Friendship Analytics
+        </h1>
+        <div className="p-8  bg-white shadow-sm mb-20 rounded-lg mt-4">
+          <p className="font-medium text-xl text-[#244D3F]">
+            By Interaction Type
+          </p>
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={data}
+                dataKey="value"
+                nameKey="name"
+                innerRadius="80%"
+                outerRadius="100%"
+                cornerRadius={50}
+                paddingAngle={5}
+                isAnimationActive
+              >
+                {data.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={COLORS[index % COLORS.length]}
+                  />
+                ))}
+              </Pie>
+              <Tooltip />
+              <div className="mt-4">
+                <Legend
+                  verticalAlign="bottom"
+                  height={36}
+                  iconType="circle"
+                  wrapperStyle={{
+                    paddingTop: "16px",
+                  }}
+                />
+              </div>
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    </div>
   );
 };
 

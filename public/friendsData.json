@@ -8,7 +8,7 @@
     "status": "overdue",
     "tags": ["school"],
     "bio": "We studied together in high school and used to play football every afternoon.",
-    "goal": 14,
+    "goal": 78,
     "next_due_date": "2025-07-10"
   },
   {
@@ -20,7 +20,7 @@
     "status": "almost due",
     "tags": ["college", "best friend"],
     "bio": "Met in college. We often hang out and share everything.",
-    "goal": 14,
+    "goal": 19,
     "next_due_date": "2025-07-18"
   },
   {
@@ -32,7 +32,7 @@
     "status": "on-track",
     "tags": ["office"],
     "bio": "Works with me in the same office. We usually have lunch together.",
-    "goal": 14,
+    "goal": 26,
     "next_due_date": "2025-07-25"
   },
   {
@@ -44,7 +44,7 @@
     "status": "overdue",
     "tags": ["university", "roommate"],
     "bio": "My university roommate. We stayed together for 4 years.",
-    "goal": 14,
+    "goal": 16,
     "next_due_date": "2025-07-08"
   },
   {
@@ -56,7 +56,7 @@
     "status": "almost due",
     "tags": ["family", "cousin"],
     "bio": "My cousin. We meet during family gatherings and talk a lot.",
-    "goal": 14,
+    "goal": 24,
     "next_due_date": "2025-07-20"
   },
   {
@@ -68,7 +68,7 @@
     "status": "on-track",
     "tags": ["gym"],
     "bio": "Gym partner. We motivate each other to stay fit.",
-    "goal": 14,
+    "goal": 15,
     "next_due_date": "2025-07-27"
   },
   {
@@ -80,7 +80,7 @@
     "status": "overdue",
     "tags": ["school", "childhood"],
     "bio": "Childhood friend. We grew up in the same neighborhood.",
-    "goal": 14,
+    "goal": 27,
     "next_due_date": "2025-07-12"
   },
   {
@@ -104,7 +104,7 @@
     "status": "on-track",
     "tags": ["office"],
     "bio": "Team member at work. Very helpful and supportive.",
-    "goal": 14,
+    "goal": 10,
     "next_due_date": "2025-07-26"
   },
   {
@@ -116,7 +116,7 @@
     "status": "overdue",
     "tags": ["business", "partner"],
     "bio": "Business partner. We started a small project together last year.",
-    "goal": 14,
+    "goal": 30,
     "next_due_date": "2025-07-11"
   }
 ]

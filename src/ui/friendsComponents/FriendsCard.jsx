@@ -3,20 +3,20 @@ import { Link } from "react-router";
 
 const FriendsCard = ({ friend }) => {
   const { name, picture, days_since_contact, tags, status } = friend || [];
-  console.log(friend);
+
   return (
     <Link to={`/friendDetails/${friend.id}`}>
       <div className="p-6 text-center bg-white shadow-sm rounded-lg">
         <div className="">
           <img
-            className="rounded-full object-cover mx-auto mb-3"
+            className="rounded-full w-20 h-20 object-cover mx-auto mb-3"
             src={picture}
             alt={name}
           />
         </div>
         <div className="">
           <h2 className="text-[#1F2937] text-xl font-semibold mb-2">{name}</h2>
-          <p className="text-[12px] text-[#64748B]">
+          <p className="text-[12px] text-[#64748B] mb-2">
             {days_since_contact}d ago
           </p>
           <div className="flex items-center gap-2 justify-center">

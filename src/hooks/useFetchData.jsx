@@ -5,7 +5,7 @@ const useFetchData = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const loadDAtaFromPublicFolder = async () => {
-      const res = await fetch("friendsData.json");
+      const res = await fetch("/friendsData.json");
       const data = await res.json();
       setTimeout(() => {
         setFriendsData(data);
@@ -14,13 +14,13 @@ const useFetchData = () => {
     };
     loadDAtaFromPublicFolder();
   }, []);
-  
+
   const customHooksData = {
     loading,
     friendsData,
     setFriendsData,
-    };
-    console.log(customHooksData);
+  };
+
   return customHooksData;
 };
 
