@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router";
 import useFetchData from "../../hooks/useFetchData";
 import { RingLoader } from "react-spinners";
 import { RiAlarmSnoozeLine, RiDeleteBinLine } from "react-icons/ri";
-import { IoArchiveOutline, IoCallOutline, IoVideocamOutline } from "react-icons/io5";
+import {
+  IoArchiveOutline,
+  IoCallOutline,
+  IoVideocamOutline,
+} from "react-icons/io5";
 import { HiOutlineChatBubbleBottomCenterText } from "react-icons/hi2";
+import { ActivityContext } from "../../context/FriendsActivityContext";
 
 const FriendsDetails = () => {
+  const { FriendsActivity, handleCallBtn, handleTextBtn, handleVideoBtn } =
+    useContext(ActivityContext);
+
   const { loading, friendsData = [] } = useFetchData();
   const { id } = useParams();
 
-  if (!friendsData) return;
   const findFriendData = friendsData.find((item) => item.id == id);
-  console.log(findFriendData);
 
   const {
     name,
@@ -33,7 +39,13 @@ const FriendsDetails = () => {
       </div>
     );
   }
-
+  if (!findFriendData) {
+    return (
+      <div className="flex justify-center items-center min-h-[50vh]">
+        <h1 className="text-xl font-bold">No Friend Found with this ID!</h1>
+      </div>
+    );
+  }
   return (
     <div className="mx-5 xl:px-0">
       <div className="lg:flex items-start gap-6 w-full max-w-277.5 mt-20 mx-auto mb-20">
@@ -128,16 +140,25 @@ const FriendsDetails = () => {
               Quick Check-In
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
-              <div className="bg-[#F8FAFC] text-[#1F2937] cursor-pointer hover:bg-gray-100 border border-neutral/5 text-center p-4 rounded-lg shadow-sm">
+              <div
+                onClick={() => handleCallBtn(findFriendData)}
+                className="bg-[#F8FAFC] text-[#1F2937] cursor-pointer hover:bg-gray-100 border border-neutral/5 text-center p-4 rounded-lg shadow-sm"
+              >
                 <IoCallOutline className="text-[32px] mb-2 mx-auto" />
                 <p className=" text-lg">Call</p>
               </div>
-              <div className="bg-[#F8FAFC] text-[#1F2937] cursor-pointer hover:bg-gray-100 border border-neutral/5  text-center p-4  rounded-lg shadow-sm">
+              <div
+                onClick={() => handleTextBtn(findFriendData)}
+                className="bg-[#F8FAFC] text-[#1F2937] cursor-pointer hover:bg-gray-100 border border-neutral/5  text-center p-4  rounded-lg shadow-sm"
+              >
                 <HiOutlineChatBubbleBottomCenterText className="text-[32px] mb-2 mx-auto" />
 
                 <p className="text-lg">Text</p>
               </div>
-              <div className="bg-[#F8FAFC] text-[#1F2937] cursor-pointer hover:bg-gray-100 border border-neutral/5  text-center p-4 rounded-lg shadow-sm">
+              <div
+                onClick={() => handleVideoBtn(findFriendData)}
+                className="bg-[#F8FAFC] text-[#1F2937] cursor-pointer hover:bg-gray-100 border border-neutral/5  text-center p-4 rounded-lg shadow-sm"
+              >
                 <IoVideocamOutline className="text-[32px] mb-2 mx-auto" />
                 <p className="text-lg">Video</p>
               </div>
