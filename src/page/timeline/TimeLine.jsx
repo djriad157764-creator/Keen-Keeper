@@ -10,17 +10,15 @@ import { RingLoader } from "react-spinners";
 const TimeLine = () => {
   const { loading } = useFetchData();
   const { FriendsActivity } = useContext(ActivityContext);
-  const [sortType, setSortType] = useState("all");
+  const [sortType, setSortType] = useState("All");
 
   const sortingData = useMemo(() => {
-    if (sortType === "all") {
+    if (sortType === "All") {
       return FriendsActivity;
     } else {
       return FriendsActivity.filter((friend) => friend.type === sortType);
     }
   }, [sortType, FriendsActivity]);
-
-  console.log(typeof sortingData);
 
   if (loading) {
     return (
@@ -41,15 +39,15 @@ const TimeLine = () => {
             <div className="mb-6">
               <div className="dropdown dropdown-start">
                 <div tabIndex={0} role="button" className="btn m-1">
-                  <p className="flex items-center gap-1 text-[#64748B] font-normal text-lg">
-                    Filter timeline <MdKeyboardArrowDown />
+                  <p className="flex items-center gap-1 text-[#64748B] font-normal text-base">
+                    Sort By {sortType} <MdKeyboardArrowDown />
                   </p>
                 </div>
                 <ul
                   tabIndex="-1"
                   className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
                 >
-                  <li onClick={() => setSortType("all")}>
+                  <li onClick={() => setSortType("All")}>
                     <a>All</a>
                   </li>
                   <li onClick={() => setSortType("AudioCall")}>
@@ -58,7 +56,7 @@ const TimeLine = () => {
                   <li onClick={() => setSortType("TextMessage")}>
                     <a>Text</a>
                   </li>
-                  <li onClick={() => setSortType("videoCall")}>
+                  <li onClick={() => setSortType("VideoCall")}>
                     <a>Video</a>
                   </li>
                 </ul>
@@ -75,7 +73,7 @@ const TimeLine = () => {
               No History Found
             </h2>
             <p className="text-gray-500">
-              {sortType === "all" ?
+              {sortType === "All" ?
                 "No activities found"
               : `No ${
                   sortType === "AudioCall" ? "Call"
@@ -84,9 +82,9 @@ const TimeLine = () => {
                 } activities yet`
               }
             </p>
-            {sortType !== "all" && (
+            {sortType !== "All" && (
               <button
-                onClick={() => setSortType("all")}
+                onClick={() => setSortType("All")}
                 className="btn btn-sm btn-outline mt-4"
               >
                 View All Activities
@@ -98,7 +96,7 @@ const TimeLine = () => {
               return <HistoryCard key={index} friend={friend} />;
             } else if (friend.type === "TextMessage") {
               return <HistoryCard key={index} friend={friend} />;
-            } else if (friend.type === "videoCall") {
+            } else if (friend.type === "VideoCall") {
               return <HistoryCard key={index} friend={friend} />;
             }
           })

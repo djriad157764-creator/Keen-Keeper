@@ -104,7 +104,7 @@ const FriendsActivityContext = ({ children }) => {
     const videoCallData = {
       ...findFriendData,
       time: formattedDate,
-      type: "videoCall",
+      type: "VideoCall",
       icon: VideoIcon,
     };
 
