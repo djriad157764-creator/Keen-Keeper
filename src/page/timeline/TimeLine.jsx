@@ -20,13 +20,15 @@ const TimeLine = () => {
     }
   }, [sortType, FriendsActivity]);
 
-if (loading) {
-  return (
-    <div className="flex justify-center items-center min-h-[50vh]">
-      <RingLoader />
-    </div>
-  );
-}
+  console.log(typeof sortingData);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-[50vh]">
+        <RingLoader />
+      </div>
+    );
+  }
 
   return (
     <div className="mx-5 xl:mx-0">
@@ -47,6 +49,9 @@ if (loading) {
                   tabIndex="-1"
                   className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
                 >
+                  <li onClick={() => setSortType("all")}>
+                    <a>All</a>
+                  </li>
                   <li onClick={() => setSortType("AudioCall")}>
                     <a>Call</a>
                   </li>

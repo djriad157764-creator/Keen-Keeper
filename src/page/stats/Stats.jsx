@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Pie, PieChart, Tooltip } from "recharts";
 import { ResponsiveContainer, Cell, Legend } from "recharts";
 import { ActivityContext } from "../../context/FriendsActivityContext";
@@ -43,7 +43,7 @@ if (loading) {
           Friendship Analytics
         </h1>
         <div className="p-8  bg-white shadow-sm mb-20 rounded-lg mt-4">
-          <p className="font-medium text-xl text-[#244D3F]">
+          <p className="font-medium text-xl text-[#244D3F] mb-4 sm:mb-0">
             By Interaction Type
           </p>
           {FriendsActivity.length === 0 ?

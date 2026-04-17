@@ -11,7 +11,7 @@ const navItem = [
 
 const Navbar = () => {
   return (
-    <div className="bg-white shadow-sm">
+    <div className=" backdrop-blur-3xl shadow sticky top-0 z-50">
       <div
         className="navbar relative
        w-full max-w-360 mx-auto "
@@ -86,6 +86,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-

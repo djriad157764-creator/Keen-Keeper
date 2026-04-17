@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createContext } from "react";
 import CallIcon from "../assets/call.png";
 import TextIcon from "../assets/text.png";
@@ -8,9 +8,26 @@ import toast, { Toaster } from "react-hot-toast";
 export const ActivityContext = createContext();
 
 const FriendsActivityContext = ({ children }) => {
-  const [FriendsActivity, setFriendsActivity] = useState([]);
+  // get data in localstorage
+  const loadFromLocalstorage = (key, defaultValue) => {
+    const saveData = localStorage.getItem(key);
+    if (saveData) {
+      return JSON.parse(saveData);
+    }
+    return defaultValue;
+  };
 
-  console.log(CallIcon, VideoIcon, TextIcon);
+  // create state using localstorage
+  const [FriendsActivity, setFriendsActivity] = useState(() =>
+    loadFromLocalstorage("FriendsActivity", []),
+  );
+
+  console.log(FriendsActivity, "is array");
+
+  // set data in localstorage
+  useEffect(() => {
+    localStorage.setItem("FriendsActivity", JSON.stringify(FriendsActivity));
+  }, [FriendsActivity]);
 
   // handle call btn
   const handleCallBtn = (findFriendData) => {
@@ -32,14 +49,14 @@ const FriendsActivityContext = ({ children }) => {
     };
 
     setFriendsActivity([...FriendsActivity, AudioCallData]);
-      toast.success(
-        <p className="font-medium flex items-center gap-1">
-          {AudioCallData.type}{" "}
-          <span className="font-normal text-gray-500">
-            with {AudioCallData.name}
-          </span>{" "}
-        </p>,
-      );
+    toast.success(
+      <p className="font-medium flex items-center gap-1">
+        {AudioCallData.type}{" "}
+        <span className="font-normal text-gray-500">
+          with {AudioCallData.name}
+        </span>{" "}
+      </p>,
+    );
   };
 
   // handle text btn
@@ -62,14 +79,14 @@ const FriendsActivityContext = ({ children }) => {
     };
 
     setFriendsActivity([...FriendsActivity, TextData]);
-      toast.success(
-        <p className="font-medium flex items-center gap-1">
-          {TextData.type}{" "}
-          <span className="font-normal text-gray-500">
-            with {TextData.name}
-          </span>{" "}
-        </p>,
-      );
+    toast.success(
+      <p className="font-medium flex items-center gap-1">
+        {TextData.type}{" "}
+        <span className="font-normal text-gray-500">
+          with {TextData.name}
+        </span>{" "}
+      </p>,
+    );
   };
 
   // handle video btn
@@ -101,6 +118,8 @@ const FriendsActivityContext = ({ children }) => {
       </p>,
     );
   };
+
+  console.log(FriendsActivity);
 
   const FriendsActivityData = {
     FriendsActivity,
