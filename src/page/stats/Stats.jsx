@@ -9,14 +9,13 @@ import { RingLoader } from "react-spinners";
 
 const COLORS = ["#244D3F", "#7E35E1", "#37A163"]; // Purple, dark, green
 
-
 const Stats = () => {
   const navigate = useNavigate();
   const { FriendsActivity } = useContext(ActivityContext);
-const { loading } = useFetchData();
+  const { loading } = useFetchData();
   const callData = FriendsActivity.filter((f) => f.type === "AudioCall");
   const textData = FriendsActivity.filter((f) => f.type === "TextMessage");
-  const videoData = FriendsActivity.filter((f) => f.type === "videoCall");
+  const videoData = FriendsActivity.filter((f) => f.type === "VideoCall");
 
   const all = (textData, callData, videoData) => {
     const data = [
@@ -28,13 +27,13 @@ const { loading } = useFetchData();
   };
   const data = all(textData, callData, videoData);
 
-if (loading) {
-  return (
-    <div className="flex justify-center items-center min-h-[50vh]">
-      <RingLoader />
-    </div>
-  );
-}
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-[50vh]">
+        <RingLoader />
+      </div>
+    );
+  }
 
   return (
     <div className="mx-5 xl:px-0">
