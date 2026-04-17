@@ -1,5 +1,7 @@
 # 👥 KeenKeeper - Keep Your Friendships Alive
 
+![KeenKeeper React Project Screenshot](public/home.png)
+
 ## 📖 Project Description
 
 KeenKeeper is a React-based web application that helps you track and maintain your friendships by logging interactions like calls, texts, and video chats.
