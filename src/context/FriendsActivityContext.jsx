@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { createContext } from "react";
-import CallIcon from '../assets/call.png';
+import CallIcon from "../assets/call.png";
 import TextIcon from "../assets/text.png";
 import VideoIcon from "../assets/video.png";
+import toast, { Toaster } from "react-hot-toast";
 
 export const ActivityContext = createContext();
 
 const FriendsActivityContext = ({ children }) => {
   const [FriendsActivity, setFriendsActivity] = useState([]);
 
-
-  console.log(CallIcon, VideoIcon,TextIcon)
+  console.log(CallIcon, VideoIcon, TextIcon);
 
   // handle call btn
   const handleCallBtn = (findFriendData) => {
@@ -19,6 +19,9 @@ const FriendsActivityContext = ({ children }) => {
       month: "long",
       day: "numeric",
       year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
     });
 
     const AudioCallData = {
@@ -29,6 +32,14 @@ const FriendsActivityContext = ({ children }) => {
     };
 
     setFriendsActivity([...FriendsActivity, AudioCallData]);
+      toast.success(
+        <p className="font-medium flex items-center gap-1">
+          {AudioCallData.type}{" "}
+          <span className="font-normal text-gray-500">
+            with {AudioCallData.name}
+          </span>{" "}
+        </p>,
+      );
   };
 
   // handle text btn
@@ -38,6 +49,9 @@ const FriendsActivityContext = ({ children }) => {
       month: "long",
       day: "numeric",
       year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
     });
 
     const TextData = {
@@ -48,6 +62,14 @@ const FriendsActivityContext = ({ children }) => {
     };
 
     setFriendsActivity([...FriendsActivity, TextData]);
+      toast.success(
+        <p className="font-medium flex items-center gap-1">
+          {TextData.type}{" "}
+          <span className="font-normal text-gray-500">
+            with {TextData.name}
+          </span>{" "}
+        </p>,
+      );
   };
 
   // handle video btn
@@ -57,6 +79,9 @@ const FriendsActivityContext = ({ children }) => {
       month: "long",
       day: "numeric",
       year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
     });
 
     const videoCallData = {
@@ -67,6 +92,14 @@ const FriendsActivityContext = ({ children }) => {
     };
 
     setFriendsActivity([...FriendsActivity, videoCallData]);
+    toast.success(
+      <p className="font-medium flex items-center gap-1">
+        {videoCallData.type}{" "}
+        <span className="font-normal text-gray-500">
+          with {videoCallData.name}
+        </span>{" "}
+      </p>,
+    );
   };
 
   const FriendsActivityData = {
@@ -79,6 +112,7 @@ const FriendsActivityContext = ({ children }) => {
   return (
     <ActivityContext.Provider value={FriendsActivityData}>
       {children}
+      <Toaster />
     </ActivityContext.Provider>
   );
 };

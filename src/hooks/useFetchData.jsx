@@ -10,7 +10,7 @@ const useFetchData = () => {
       setTimeout(() => {
         setFriendsData(data);
         setLoading(false);
-      }, 1500);
+      }, 100);
     };
     loadDAtaFromPublicFolder();
   }, []);

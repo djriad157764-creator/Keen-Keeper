@@ -86,15 +86,15 @@ const FriendsDetails = () => {
             </div>
           </div>
           <div className="mt-4 font-medium ">
-            <div className="py-4 bg-white rounded-sm text-[#1F2937] shadow-sm flex items-center gap-2 justify-center mb-2">
+            <div className="py-4 bg-white rounded-sm text-[#1F2937] shadow-sm flex items-center gap-2 justify-center cursor-pointer mb-2">
               <RiAlarmSnoozeLine className="text-xl" />
               Snooze 2 weeks
             </div>
-            <div className="py-4 bg-white rounded-sm text-[#1F2937] shadow-sm flex items-center gap-2 justify-center mb-2">
+            <div className="py-4 bg-white rounded-sm text-[#1F2937] shadow-sm flex items-center gap-2 justify-center cursor-pointer mb-2">
               <IoArchiveOutline className="text-xl" />
               Archive
             </div>
-            <div className="py-4 bg-white rounded-sm text-[#EF4444] shadow-sm flex items-center gap-2 justify-center ">
+            <div className="py-4 bg-white rounded-sm text-[#EF4444] shadow-sm flex items-center gap-2 justify-center cursor-pointer ">
               <RiDeleteBinLine className="text-xl" />
               Delete
             </div>
